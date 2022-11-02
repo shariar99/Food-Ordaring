@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.os.Bundle;
 
 import com.shariar99.foodordaring.Adapters.OrderAdapter;
+import com.shariar99.foodordaring.Models.DBHelper;
 import com.shariar99.foodordaring.Models.OrdersModel;
 import com.shariar99.foodordaring.databinding.ActivityOrdersBinding;
 
@@ -21,16 +22,23 @@ public class OrdersActivity extends AppCompatActivity {
         binding = ActivityOrdersBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        ArrayList<OrdersModel> list= new ArrayList<>();
-        list.add(new OrdersModel(R.drawable.bergar,"Burgar","4","2324425"));
-        list.add(new OrdersModel(R.drawable.bergar,"Burgar","4","2324425"));
-        list.add(new OrdersModel(R.drawable.bergar,"Burgar","4","2324425"));
-        list.add(new OrdersModel(R.drawable.bergar,"Burgar","4","2324425"));
-        list.add(new OrdersModel(R.drawable.bergar,"Burgar","4","2324425"));
-        list.add(new OrdersModel(R.drawable.bergar,"Burgar","4","2324425"));
-        list.add(new OrdersModel(R.drawable.bergar,"Burgar","4","2324425"));
-        list.add(new OrdersModel(R.drawable.bergar,"Burgar","4","2324425"));
-        list.add(new OrdersModel(R.drawable.bergar,"Burgar","4","2324425"));
+
+
+        DBHelper helper = new DBHelper(this);
+        ArrayList<OrdersModel> list= helper.getOrder();
+
+
+
+
+//        list.add(new OrdersModel(R.drawable.bergar,"Burgar","4","2324425"));
+//        list.add(new OrdersModel(R.drawable.bergar,"Burgar","4","2324425"));
+//        list.add(new OrdersModel(R.drawable.bergar,"Burgar","4","2324425"));
+//        list.add(new OrdersModel(R.drawable.bergar,"Burgar","4","2324425"));
+//        list.add(new OrdersModel(R.drawable.bergar,"Burgar","4","2324425"));
+//        list.add(new OrdersModel(R.drawable.bergar,"Burgar","4","2324425"));
+//        list.add(new OrdersModel(R.drawable.bergar,"Burgar","4","2324425"));
+//        list.add(new OrdersModel(R.drawable.bergar,"Burgar","4","2324425"));
+//        list.add(new OrdersModel(R.drawable.bergar,"Burgar","4","2324425"));
 
         OrderAdapter adapter = new OrderAdapter(list,this);
         binding.orderRecyclerView.setAdapter(adapter);

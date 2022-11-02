@@ -37,7 +37,7 @@ public class OrdersModel {
         this.orderprice = orderprice;
     }
 
-    public OrdersModel(int orderImage, String soldName, String orderNum, String orderprice) {
+    public OrdersModel() {
         this.orderImage = orderImage;
         this.soldName = soldName;
         this.orderNum = orderNum;

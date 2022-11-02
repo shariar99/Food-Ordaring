@@ -1,10 +1,15 @@
 package com.shariar99.foodordaring;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Switch;
 
 import com.shariar99.foodordaring.Adapters.MainAdapter;
 import com.shariar99.foodordaring.Models.MainModel;
@@ -36,5 +41,21 @@ public class MainActivity extends AppCompatActivity {
         binding.recyclerView.setLayoutManager(layoutManager);
 
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.orders:
+                startActivity(new Intent(MainActivity.this,OrdersActivity.class));
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
