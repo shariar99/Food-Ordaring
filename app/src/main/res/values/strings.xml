@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Food ordaring</string>
+    <string name="Description"> Akon aikhan a discription hoba jaita sql database thaka nibo amra</string>
 </resources>
